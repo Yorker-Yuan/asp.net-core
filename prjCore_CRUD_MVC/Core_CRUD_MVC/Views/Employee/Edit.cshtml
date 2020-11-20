@@ -1,0 +1,52 @@
+﻿@model Core_CRUD_MVC.Models.CEmployee
+
+@{
+    ViewData["Title"] = "編輯員工資料";
+}
+
+<h1>編輯員工資料</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="fId" class="control-label"></label>
+                <input asp-for="fId" class="form-control" readonly/>
+                <span asp-validation-for="fId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fEmpName" class="control-label"></label>
+                <input asp-for="fEmpName" class="form-control" />
+                <span asp-validation-for="fEmpName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fEmail" class="control-label"></label>
+                <input asp-for="fEmail" class="form-control" />
+                <span asp-validation-for="fEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fAge" class="control-label"></label>
+                <input asp-for="fAge" class="form-control" />
+                <span asp-validation-for="fAge" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fSalary" class="control-label"></label>
+                <input asp-for="fSalary" class="form-control" />
+                <span asp-validation-for="fSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="儲存" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

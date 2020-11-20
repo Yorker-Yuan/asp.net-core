@@ -1,0 +1,58 @@
+﻿@model JQueryAjaxCRUDInCore.Models.CTransaction
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CTransaction</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="fAccountNum" class="control-label"></label>
+                <input asp-for="fAccountNum" class="form-control" />
+                <span asp-validation-for="fAccountNum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fBeneficiaryName" class="control-label"></label>
+                <input asp-for="fBeneficiaryName" class="form-control" />
+                <span asp-validation-for="fBeneficiaryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fBankName" class="control-label"></label>
+                <input asp-for="fBankName" class="form-control" />
+                <span asp-validation-for="fBankName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fSwiftCode" class="control-label"></label>
+                <input asp-for="fSwiftCode" class="form-control" />
+                <span asp-validation-for="fSwiftCode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fAmount" class="control-label"></label>
+                <input asp-for="fAmount" class="form-control" />
+                <span asp-validation-for="fAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="fDate" class="control-label"></label>
+                <input asp-for="fDate" class="form-control" />
+                <span asp-validation-for="fDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

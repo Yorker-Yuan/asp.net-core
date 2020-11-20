@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Core_CRUD_MVC.Models.CEmployee>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.fId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fEmpName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fAge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fSalary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.fId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fEmpName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fAge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fSalary)
+            </td>
+            <td>
+                @Html.ActionLink("編輯", "Edit", new { id=item.fId },new {@class="btn btn-primary" }) |
+                @Html.ActionLink("詳情", "Details", new { id = item.fId }, new { @class = "btn btn-success" }) |
+                @Html.ActionLink("刪除", "Delete", new { id = item.fId }, new { @class = "btn btn-danger"})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,52 @@
+﻿@model JQueryAjaxCRUDInCore.Models.CTransaction
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fAccountNum)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fAccountNum)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fBeneficiaryName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fBeneficiaryName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fBankName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fBankName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fSwiftCode)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fSwiftCode)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fAmount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fAmount)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.fDate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.fDate)
+        </dd>
+    </dl>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.fTranId">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
