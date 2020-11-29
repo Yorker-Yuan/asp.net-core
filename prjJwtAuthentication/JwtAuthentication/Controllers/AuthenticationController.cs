@@ -1,0 +1,72 @@
+﻿using System;
+using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
+using System.Security.Claims;
+using System.Text;
+using System.Threading.Tasks;
+using JwtAuthentication.ViewModels;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+
+namespace JwtAuthentication.Controllers
+{
+    public class AuthenticationController : Controller
+    {
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly IConfiguration _configuration;
+
+        public AuthenticationController(UserManager<IdentityUser> userManager, IConfiguration configuration)
+        {
+            _userManager = userManager;
+            _configuration = configuration;
+        }
+
+        [Route("register")]
+        [HttpPost]
+        public async Task<ActionResult> InsertUser([FromBody] CRegister reg)
+        {
+            var user = new IdentityUser
+            {
+                Email = reg.fEmail,
+                UserName = reg.fEmail,
+                SecurityStamp = Guid.NewGuid().ToString()
+            };
+            var result = await _userManager.CreateAsync(user,reg.fPassword);
+            if (result.Succeeded)
+                await _userManager.AddToRoleAsync(user, "Customer");
+            return Ok(new { Username = user.UserName});
+        }
+
+        [Route("login")]
+        [HttpPost]
+        public async Task<ActionResult> Login([FromBody] CLogin model)
+        {
+            var user = await _userManager.FindByNameAsync(model.fUserName);
+            if(user != null && await _userManager.CheckPasswordAsync(user,model.fPassword))
+            {
+                var claim = new[] {
+                    new Claim(JwtRegisteredClaimNames.Sub,user.UserName)
+                 };
+                var signInKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:SigningKey"]));
+                int expiryInMinutes = Convert.ToInt32(_configuration["Jwt:ExpiryInMinutes"]);
+
+                var token = new JwtSecurityToken(
+                    issuer: _configuration["Jwt:Site"],
+                    audience: _configuration["Jwt:Site"],
+                    expires: DateTime.UtcNow.AddMinutes(expiryInMinutes),
+                    signingCredentials: new SigningCredentials(signInKey, SecurityAlgorithms.HmacSha256)
+                    );
+                return Ok(
+                    new
+                    {
+                        token = new JwtSecurityTokenHandler().WriteToken(token),
+                        expiration = token.ValidTo
+                    }) ;
+            }
+            return Unauthorized();
+        }
+    }
+}
