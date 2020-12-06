@@ -8480,11 +8480,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\asp.net_mvc\\asp.net core\\prjCore_CRUD_MVC\\Core_CRUD_MVC\\Core_CRUD_MVC.csproj",
+      "projectUniqueName": "D:\\asp.net_mvc\\asp.net-core\\prjCore_CRUD_MVC\\Core_CRUD_MVC\\Core_CRUD_MVC.csproj",
       "projectName": "Core_CRUD_MVC",
-      "projectPath": "D:\\asp.net_mvc\\asp.net core\\prjCore_CRUD_MVC\\Core_CRUD_MVC\\Core_CRUD_MVC.csproj",
+      "projectPath": "D:\\asp.net_mvc\\asp.net-core\\prjCore_CRUD_MVC\\Core_CRUD_MVC\\Core_CRUD_MVC.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\asp.net_mvc\\asp.net core\\prjCore_CRUD_MVC\\Core_CRUD_MVC\\obj\\",
+      "outputPath": "D:\\asp.net_mvc\\asp.net-core\\prjCore_CRUD_MVC\\Core_CRUD_MVC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
