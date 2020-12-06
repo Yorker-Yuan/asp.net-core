@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yx7C1zLbfhqfTBgpO0OQQ5AxHzfUwyRHe4hUsorNAYcQxNP+3Utz0b/kg/Hp8rVyVrxcEY32IZAxem31Y7rR3g==",
+  "dgSpecHash": "VT7EWOTrXVFenTObw2lXAHZ4jPH2TOmRFaMVyOcvg8qwdGBTkKsAX9PkKo3Zj3agsfR7Urrz/A0E8ZpJRMSq2g==",
   "success": true,
-  "projectFilePath": "D:\\asp.net_mvc\\asp.net core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj",
+  "projectFilePath": "D:\\asp.net_mvc\\asp.net-core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\asp.net_mvc\\asp.net core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj": {}
+    "D:\\asp.net_mvc\\asp.net-core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj": {}
   },
   "projects": {
-    "D:\\asp.net_mvc\\asp.net core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj": {
+    "D:\\asp.net_mvc\\asp.net-core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\asp.net_mvc\\asp.net core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj",
+        "projectUniqueName": "D:\\asp.net_mvc\\asp.net-core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj",
         "projectName": "JQueryAjaxCRUDInCore",
-        "projectPath": "D:\\asp.net_mvc\\asp.net core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj",
+        "projectPath": "D:\\asp.net_mvc\\asp.net-core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\asp.net_mvc\\asp.net core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\obj\\",
+        "outputPath": "D:\\asp.net_mvc\\asp.net-core\\prjJQueryAjaxCRUDInCore\\JQueryAjaxCRUDInCore\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
