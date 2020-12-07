@@ -1,4 +1,0 @@
-App Structure
-----------------
-
-redux, react-redux, redux-thunk
