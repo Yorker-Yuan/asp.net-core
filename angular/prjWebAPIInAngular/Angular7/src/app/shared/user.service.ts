@@ -1,38 +1,39 @@
 import { Injectable } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
-})
+     providedIn: 'root'
+    })
 export class UserService {
 
-  constructor(private fb:FormBuilder, private http:HttpClient) { }
+  constructor(private fb: FormBuilder, private http: HttpClient) { }
 readonly BaseURI = "http://localhost:49821/api";
+
   formModel = this.fb.group({
-    UserName:['',Validators.required],
-    Email:['',,Validators.email],
-    FullName:[''],
+    UserName: ['',Validators.required],
+    Email: ['',Validators.email],
+    FullName: [''],
     Passwords: this.fb.group({
-      Password:['',[Validators.required,Validators.minLength(4)]],
-      ConfirmPassword:['',Validators.required]
-    },{validator : this.comparePasswords})
+      Password: ['', [Validators.required,Validators.minLength(4)]],
+      ConfirmPassword: ['',Validators.required]
+    },{ validator : this.comparePasswords})
   });
 
-  comparePasswords(fb:FormGroup){
+  comparePasswords(fb: FormGroup){
     let ConfirmPsdCtrl = fb.get('ConfirmPassword');
     //passwordMismatch
     //confirmPsdCtrl.errors=(passwordMismatch:true)
-    if(ConfirmPsdCtrl.errors == null || 'passwordMismatch' in ConfirmPsdCtrl.errors){
-      if(fb.get('Password').value != ConfirmPsdCtrl.value) 
+    if (ConfirmPsdCtrl.errors == null || 'passwordMismatch' in ConfirmPsdCtrl.errors){
+      if (fb.get('Password').value != ConfirmPsdCtrl.value) 
       {
-        ConfirmPsdCtrl.setErrors({passwordMismatch:true});
+        ConfirmPsdCtrl.setErrors({ passwordMismatch:true });
       }
       else
       {
         ConfirmPsdCtrl.setErrors(null);
       }
-    };
+    }
   }
 
   register(){
@@ -44,5 +45,4 @@ readonly BaseURI = "http://localhost:49821/api";
     };
     return this.http.post(this.BaseURI+'/ApplicationUser/Register',body);
   }
-
 }

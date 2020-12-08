@@ -193,7 +193,7 @@ namespace WebAPIInAngular.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("fFullName")
+                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(150)");
 
                     b.ToTable("ApplicationUser");

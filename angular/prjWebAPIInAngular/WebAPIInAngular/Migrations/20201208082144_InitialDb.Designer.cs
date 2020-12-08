@@ -10,8 +10,8 @@ using WebAPIInAngular.Models;
 namespace WebAPIInAngular.Migrations
 {
     [DbContext(typeof(AuthenticationContext))]
-    [Migration("20201126221300_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20201208082144_InitialDb")]
+    partial class InitialDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -195,7 +195,7 @@ namespace WebAPIInAngular.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("fFullName")
+                    b.Property<string>("FullName")
                         .HasColumnType("nvarchar(150)");
 
                     b.ToTable("ApplicationUser");

@@ -28,13 +28,14 @@ namespace WebAPIInAngular.Controllers
         public async Task<Object> PostApplicationUser(CApplicationUser c)
         {
             var applicationuser = new ApplicationUser() {
-                UserName = c.fUserName,
-                Email = c.fEmail,
-                fFullName = c.fFullName
+                //此處對應到IdentityUser
+                UserName = c.UserName,
+                Email = c.Email,
+                FullName = c.FullName
             };
             try
             {
-                var result = await _userManager.CreateAsync(applicationuser,c.fPassword);
+                var result = await _userManager.CreateAsync(applicationuser,c.Password);
                 return Ok(result);
             }
             catch (Exception e)

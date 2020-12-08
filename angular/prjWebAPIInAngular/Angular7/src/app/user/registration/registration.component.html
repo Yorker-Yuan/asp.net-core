@@ -1,57 +1,49 @@
 <div class="row mt-4">
   <div class="col-md-6">
-    <div
-      class="row"
-      style="height:450px;"
-    >
-      <div class="col-md-12 ny-auto side-header">
-        <img
-          src="/assets/img/add_user.png"
-          class="mx-auto d-block"
-        >
+    <div class="row" style="height:450px;">
+      <div class="col-md-12 my-auto side-header">
+        <img src="/assets/img/add_user.png" class="mx-auto d-block">
         <h1>使用者註冊</h1>
         <p><em>-Using <strong>Asp.Net Core Web API</strong> and <strong>Angular 7</strong></em></p>
       </div>
     </div>
-
   </div>
+
   <div class="col-md-6">
     <form [formGroup]="service.formModel" autocomplete="off" (submit)="onSubmit()">
-<div class="form-group required">
-  <label>使用者名稱</label>
-  <input class="form-control" formControlName="UserName">
-  <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">必填欄位</label>
-</div>
-<div class="form-group">
-  <label>信箱</label>
-  <input class="form-control" formControlName="Email">
-  <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email'').errors?.email">信箱格式錯誤</label>
-</div>
-<div class="form-group">
-  <label>姓名</label>
-  <input class="form-control" formControlName="FullName">
-</div>
-<div formGroupName="Passwords">
-  <div class="form-group required">
-    <label>密碼</label>
-    <input type="password" class="form-control" formControlName="Password">
-    <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get(''Passwords.Password'').errors?.required">必填欄位</label>
-    <label class="text-danger" *ngIf="service.formModel.get(''Passwords.Password').touched && service.formModel.get(''Passwords.Password'').errors?.minlength">最少要有4個字元</label>
-  </div>
-  <div class="form-group required">
-    <label>密碼確認</label>
-    <input type="password" class="form-control" formControlName="ConfirmPassword">
-    <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">必填欄位</label>
-    <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">密碼不一致</label>
-  </div>
-</div>
-<div class="form-row">
-  <div class="form-group col-md-8 offset-md-2">
-    <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">註冊</button>
-  </div>
-</div>
-</div>
-
+      <div class="form-group required">
+        <label>使用者名稱</label>
+        <input class="form-control" formControlName="UserName">
+        <label class="text-danger" *ngIf="service.formModel.get('UserName').touched && service.formModel.get('UserName').errors?.required">必填欄位</label>
+      </div>
+      <div class="form-group">
+        <label>信箱</label>
+        <input class="form-control" formControlName="Email">
+        <label class="text-danger" *ngIf="service.formModel.get('Email').touched && service.formModel.get('Email').errors?.email">信箱格式錯誤</label>
+      </div>
+      <div class="form-group">
+        <label>姓名</label>
+        <input class="form-control" formControlName="FullName">
+      </div>
+      <div formGroupName="Passwords">
+        <div class="form-group required">
+          <label>密碼</label>
+          <input type="password" class="form-control" formControlName="Password">
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.required">必填欄位</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.Password').touched && service.formModel.get('Passwords.Password').errors?.minlength">最少要有4個字元</label>
+        </div>
+        <div class="form-group required">
+          <label>密碼確認</label>
+          <input type="password" class="form-control" formControlName="ConfirmPassword">
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.required">必填欄位</label>
+          <label class="text-danger" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">密碼不一致</label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8 offset-md-2">
+          <button type="submit" class="btn btn-lg btn-block" [disabled]="!service.formModel.valid">註冊</button>
+        </div>
+      </div>
     </form>
   </div>
 </div>

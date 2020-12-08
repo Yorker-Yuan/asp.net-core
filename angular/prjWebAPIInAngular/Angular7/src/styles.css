@@ -1,36 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-  background-color: #ffc107;
+body{
+  background-color: #ffc107;;
 }
-input.form-control,
-input.form-control:focus {
-  background-color: #fff107;
+
+input.form-control,input.form-control:focus{
+  background-color: #ffc107;
   color: black;
   border-color: black;
-  border-radius: 0;
+  border-radius: 0px;
   border-width: 2px;
 }
-input.form-control:focus {
+
+input.form-control:focus{
   box-shadow: none;
   border-bottom-color: black;
 }
-button[type="submit"].btn {
+
+button[type=submit].btn{
   border-radius: 20px;
   background-color: #000;
   color: #fff;
 }
-div.form-group label {
-  color: #000;
+
+div.form-group label{
+  color: black;
   font-weight: bold;
 }
+
 div.form-group.required>label:first-child:after{
-  content: '*';
+  content:'*';
   color: #dc3545;
-  padding-left: 5px;
+padding-left: 5px;
 }
-#toast-container > div{
-  opacity: 1;
+
+#toast-container > div {
+  opacity:1;
 }
+
 form{
-  margin: 0 16px;
+  margin: 0px 16px;
+}
+
+div.side-header{
+  border:3px solid black;
 }

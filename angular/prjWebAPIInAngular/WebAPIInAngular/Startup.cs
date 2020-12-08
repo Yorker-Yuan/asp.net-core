@@ -34,7 +34,7 @@ namespace WebAPIInAngular
             //建立identity
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<AuthenticationContext>();
-
+            //使用者驗證
             services.Configure<IdentityOptions>(options =>
             {
                 options.Password.RequireDigit = false;
@@ -59,6 +59,7 @@ namespace WebAPIInAngular
             builder.WithOrigins("http://localhost:4200")
             .AllowAnyHeader()
             .AllowAnyMethod());
+
             app.UseAuthentication();
 
             app.UseMvc();

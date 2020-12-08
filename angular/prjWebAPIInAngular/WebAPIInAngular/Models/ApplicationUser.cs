@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace WebAPIInAngular.Models
 {
-    public class ApplicationUser:IdentityUser
+    public class ApplicationUser: IdentityUser
     {
         [Column(TypeName ="nvarchar(150)")]
-        public string fFullName { get; set; }
+        public string FullName { get; set; }
     }
 }

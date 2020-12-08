@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\asp.net_mvc\\asp.net-core\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj": {}
+    "D:\\asp.net_mvc\\asp.net-core\\angular\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj": {}
   },
   "projects": {
-    "D:\\asp.net_mvc\\asp.net-core\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj": {
+    "D:\\asp.net_mvc\\asp.net-core\\angular\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\asp.net_mvc\\asp.net-core\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj",
+        "projectUniqueName": "D:\\asp.net_mvc\\asp.net-core\\angular\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj",
         "projectName": "WebAPIInAngular",
-        "projectPath": "D:\\asp.net_mvc\\asp.net-core\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj",
+        "projectPath": "D:\\asp.net_mvc\\asp.net-core\\angular\\prjWebAPIInAngular\\WebAPIInAngular\\WebAPIInAngular.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\asp.net_mvc\\asp.net-core\\prjWebAPIInAngular\\WebAPIInAngular\\obj\\",
+        "outputPath": "D:\\asp.net_mvc\\asp.net-core\\angular\\prjWebAPIInAngular\\WebAPIInAngular\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

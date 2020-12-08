@@ -12,30 +12,31 @@ export class RegistrationComponent implements OnInit {
   constructor(public service: UserService, private toastr:ToastrService) { }
 
   ngOnInit(){
+    this.service.formModel.reset();
   }
   onSubmit(){
     this.service.register().subscribe(
       (res: any) =>{
         if(res.succeeded){
           this.service.formModel.reset();
-          this.toastr.success('使用者已新增','註冊成功')
+          this.toastr.success('使用者已新增','註冊成功');
         }else{
           res.errors.forEach(element => {
             switch (element.code) {
               case 'DuplicateUserName':
-                this.toastr.error('用戶名已存在','註冊失敗')
+                this.toastr.error('用戶名已存在','註冊失敗');
                 //UserName is already taken
                 break;
             
               default:
-                this.toastr.error(element.description,'註冊失敗')
+                this.toastr.error(element.description,'註冊失敗');
                 //Registration failed
                 break;
             }
           });
         }
       },
-      err=>{
+      err => {
         console.log(err);
       }
     );
