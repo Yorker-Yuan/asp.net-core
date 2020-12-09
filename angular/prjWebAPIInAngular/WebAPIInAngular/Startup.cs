@@ -37,8 +37,9 @@ namespace WebAPIInAngular
             //建立連線
             services.AddDbContext<AuthenticationContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
-            //建立identity
+            //建立identity，並設定角色
             services.AddDefaultIdentity<ApplicationUser>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<AuthenticationContext>();
             //使用者驗證
             services.Configure<IdentityOptions>(options =>

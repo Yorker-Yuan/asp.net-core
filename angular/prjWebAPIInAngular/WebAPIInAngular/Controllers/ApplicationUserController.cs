@@ -34,6 +34,8 @@ namespace WebAPIInAngular.Controllers
         //POST: api/ApplicationUser/Register
         public async Task<Object> PostApplicationUser(CApplicationUser c)
         {
+            c.Role = "Admin";
+
             var applicationuser = new ApplicationUser() {
                 //此處對應到IdentityUser
                 UserName = c.UserName,
@@ -43,6 +45,7 @@ namespace WebAPIInAngular.Controllers
             try
             {
                 var result = await _userManager.CreateAsync(applicationuser,c.Password);
+                await _userManager.AddToRoleAsync(applicationuser, c.Role);
                 return Ok(result);
             }
             catch (Exception e)
@@ -57,11 +60,15 @@ namespace WebAPIInAngular.Controllers
             var user = await _userManager.FindByNameAsync(login.UserName);
             if (user != null && await _userManager.CheckPasswordAsync(user, login.Password))
             {
+                //get role assigned to the user
+                var role = await _userManager.GetRolesAsync(user);
+                IdentityOptions _options = new IdentityOptions();
                 var tokenDescripter = new SecurityTokenDescriptor
                 {
                     Subject = new ClaimsIdentity(new Claim[]
                  {
-                     new Claim("UserID", user.Id.ToString())
+                     new Claim("UserID", user.Id.ToString()),
+                     new Claim(_options.ClaimsIdentity.RoleClaimType,role.FirstOrDefault())
                  }),
                     Expires = DateTime.UtcNow.AddDays(1),
                     SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSettings.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
