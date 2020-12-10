@@ -25,7 +25,7 @@
     </div>
   </div>
   <div class="tbody">
-    <form class="tr" [formGroup]="fg" *ngFor="let fg of bankAccountForms.controls; let i=index;" (submit)="recordSubmit(fg)">
+    <form class="tr" [formGroup]="fg" *ngFor="let fg of bankAccountForms.controls;let i=index;" (submit)="recordSubmit(fg)">
         <div class="td">
             <input class="form-control" formControlName="fAccountNumber">
         </div>
